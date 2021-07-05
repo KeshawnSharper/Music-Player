@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import "../Form/Form.css"
-import { useLocation } from 'react-router-dom'
+import { useLocation,Link } from 'react-router-dom'
 const Form = ({user,error,changeUser,submit}) => {
     return (
         <div>
@@ -43,7 +43,7 @@ const Form = ({user,error,changeUser,submit}) => {
               <input type="submit" defaultValue={user.re_password ? 'Sign Up' : "Sign In"} onClick={e => submit(e)}/>
             </div>
           </form>
-          <p className="text--center">Not a member? <a href="#">Sign up now</a> <svg className="icon">
+          <p className="text--center">Not a member? <Link to={useLocation().pathname === "/register" ? "/" : "/register"}>Sign up now</Link> <svg className="icon">
               <use xlinkHref="#icon-arrow-right" />
             </svg></p>
         </div>
