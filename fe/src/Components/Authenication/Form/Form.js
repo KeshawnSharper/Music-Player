@@ -13,7 +13,7 @@ const Form = ({user,error,changeUser,submit}) => {
               <label htmlFor="login__username"><svg className="icon">
                   <use xlinkHref="#icon-user" />
                 </svg><span className="hidden">Username</span></label>
-              <input onChange={e => changeUser(e)} name="username" value={user.username} autoComplete="username" id="login__username" type="text"  className="form__input" placeholder="Email" required />
+              <input onChange={e => changeUser(e)} name="username" value={user.username} autoComplete="username" id="login__username" type="text"  className="form__input" placeholder="Username" required />
             </div>
                   : <> </>
               }
@@ -21,7 +21,7 @@ const Form = ({user,error,changeUser,submit}) => {
               <label htmlFor="login__username"><svg className="icon">
                   <use xlinkHref="#icon-user" />
                 </svg><span className="hidden">Email</span></label>
-              <input onChange={e => changeUser(e)} name="email" value={user.email} autoComplete="username" id="login__username" type="text"  className="form__input" placeholder="Username" required />
+              <input onChange={e => changeUser(e)} name="email" value={user.email} autoComplete="username" id="login__username" type="text"  className="form__input" placeholder="Email" required />
             </div>
             <div className="form__field">
               <label htmlFor="login__password"><svg className="icon">
