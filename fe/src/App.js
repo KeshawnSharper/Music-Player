@@ -7,24 +7,15 @@ import {
   Link
 } from "react-router-dom";
 import Login from "./Components/Authenication/Login/Login"
+import Register from "./Components/Authenication/Registration/Registration"
+
 function App() {
   return (
     <div className="App">
       <Router>
-  
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          {/* <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/users">
-            <Users />
-          </Route> */}
-          <Route path="/">
-            <Login />
-          </Route>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/register" component={Register} />
         </Switch>
     </Router>
     </div>
