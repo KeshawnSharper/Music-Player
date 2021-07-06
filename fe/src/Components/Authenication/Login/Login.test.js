@@ -7,18 +7,17 @@ import Enzyme from 'enzyme';
 Enzyme.configure({ adapter: new Adapter() });
 
 import Login from "../Login/Login"
-const LoginComponent = mount(<Login />);
+import Form from "../Form/Form"
+test('Detail should contain EdgeIcon if there is selected edge', () => {
+    const { getByTestId } = render(<Login />);
+    expect(getByTestId('login-head')).toContainInstanceOf(<Form />);
+  });
+// test("Should render Login component",() => {
+//     expect(LoginComponent.exists('.gri')).to.equal(false);
 
-test("Should render Login component",() => {
-    expect(LoginComponent.exists('.grid')).to.equal(true);
+// })
+// test("Should change text in component",() => {
+//     LoginComponent.find('#login__username').simulate('click')
+//     expect(LoginComponent.find('.error_message').text()).to.equal("Email and/or password doesn't meet requirements, Try again ");
 
-})
-test("Should render Login component",() => {
-    expect(LoginComponent.exists('.gri')).to.equal(false);
-
-})
-test("Should change text in component",() => {
-    LoginComponent.find('#login__username').simulate('click')
-    expect(LoginComponent.find('.error_message').text()).to.equal("Email and/or password doesn't meet requirements, Try again ");
-
-})
+// })
