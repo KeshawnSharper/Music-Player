@@ -5,25 +5,25 @@ const UsersShema = mongoose.Schema({
     type: String,
     required: true,
     maxlength:255,
-      minlength:100
+      minlength:7
   },
   password: {
     type: String,
     required: true,
     maxlength:255,
-    minlength:100
+    minlength:7
   },
   email : {
       type: String,
       required:true,
       maxlength:255,
-      minlength:100
+      minlength:7
   },
   id:{
     type: String,
       required:true,
       maxlength:255,
-      minlength:100
+      minlength:0
   }
 });
 

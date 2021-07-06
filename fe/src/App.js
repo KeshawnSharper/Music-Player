@@ -7,15 +7,19 @@ import {
   Link
 } from "react-router-dom";
 import Login from "./Components/Authenication/Login/Login"
-import Register from "./Components/Authenication/Registration/Registration"
+import Registration from "./Components/Authenication/Registration/Registration"
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={Login} />
-          <Route exact path="/register" component={Register} />
+          <Route exact path="/">
+          <Login />
+            </Route> 
+          <Route exact path="/register">
+          <Registration />
+            </Route> 
         </Switch>
     </Router>
     </div>

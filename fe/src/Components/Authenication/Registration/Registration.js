@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import Form from "../Form/Form"
-const Login = () => {
+import { register } from "../../../actions/actions";
+import { connect } from "react-redux";
+const Registration = ({user,loading,register}) => {
     const [registerUser,setRegisterUser] = useState({
         "password":"",
         "email":"",
@@ -27,7 +29,7 @@ const Login = () => {
 
       }
 else{
-  console.log("hi")
+  register(registerUser)
 }
     }
     return (
@@ -36,4 +38,18 @@ else{
 </div>
     )
 }
-export default Login
+function mapStateToProps(state) {
+    return {
+      user: state.user,
+      loading: state.loading,
+    }
+  }
+  // Login action will send the loginUser state to the redux store to adjust the store based on the response from the backend
+  const mapDispatchToProps = (dispatch) => {
+    return {
+      register: (user) => {
+        dispatch(register(user));
+      }
+    };
+  };
+  export default connect(mapStateToProps, mapDispatchToProps)(Registration);
