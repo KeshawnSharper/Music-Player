@@ -31,13 +31,14 @@ router.post("/register", async (req, res) => {
 
     let hash = bcrypt.hashSync(user.password,13)
     user.password = hash
-    user.id = await users.countDocuments() + 1
+    let usersCount = await users.countDocuments()
+    user.id = `Default_${usersCount + 1}`
 
     await users.create(
         user
 )
     try {
-    res.json({"username":user.username,"password":user.password,"id":user.id});
+    res.json({"username":user.username,"id":user.id,"email":user.email});
     } catch (e) {
       console.log("failed")
       res.json({ msg: e });
