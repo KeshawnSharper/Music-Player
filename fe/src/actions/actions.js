@@ -13,12 +13,11 @@ export function login(user) {
         type: "LOGIN",
         payload: { username: response.data.username, id: response.data.id }
       })
-      console.log(response)
       localStorage.setItem("token",response.data.token)
       localStorage.setItem("username",response.data.username)
       localStorage.setItem("id",response.data.id)
     })
-    .catch((err) => dispatch({ type: "LOGIN_FAIL", payload: err }));
+    .catch((err) => dispatch({ type: "LOGIN_FAIL", payload: err }))
 }
   }
 // register action that logs user in once registered
@@ -30,9 +29,10 @@ export function register(user) {
       axios
         .post(`http://localhost:5000/users/register`, user)
         .then((response) => {
+          console.log(response)
           dispatch({
             // Loggs that the user is successfully registered
-            type: "REGISTER"
+            type: "REGISTER",payload:response.data
           });
         })
         .catch((err) => {
