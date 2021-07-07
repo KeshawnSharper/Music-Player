@@ -24,7 +24,7 @@ export function login(user) {
 export function register(user) {
     return (dispatch) => {
       //   Load register
-      dispatch({ type: "REGISTER_LOADING" });
+      dispatch({ type: "REGISTER_LOADING" })
       // send register credentials to backend
       axios
         .post(`http://localhost:5000/users/register`, user)
