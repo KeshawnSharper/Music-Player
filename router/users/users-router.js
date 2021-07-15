@@ -47,13 +47,13 @@ router.post("/register", async (req, res) => {
   router.post("/login", async (req, res) => {
     let user = req.body
     let login = await users.findOne({
-      username:user.username}).exec()
+      email:user.email}).exec()
 
     try {
       if (bcrypt.compareSync(user.password,login.password)){
-      res.json({ id:login.id,username:user.username,token:jwt.sign({
+      res.json({ id:login.id,username:login.username,token:jwt.sign({
         id:login.id,
-        username:user.username
+        username:login.username
       },"secret",{
         expiresIn:"1d"
       })})

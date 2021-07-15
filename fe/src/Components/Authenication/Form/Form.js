@@ -1,11 +1,13 @@
 import React, { useState } from "react"
 import "../Form/Form.css"
 import { useLocation,Link } from 'react-router-dom'
+import Google from "../Google/Google"
 const Form = ({appError,user,error,changeUser,submit}) => {
     return (
         <div>
         <div className="grid">
-          <p className="error_message"> {appError ? "Invalid Credentials" : error} </p>
+          <p className="error_message"> {appError ? "Invalid Credentials" : error
+                  } </p>
           <form autoComplete="off" className="form login">
               {
                   useLocation().pathname === "/register"  ?
@@ -45,6 +47,7 @@ const Form = ({appError,user,error,changeUser,submit}) => {
             <div className="form__field">
               <input type="submit" defaultValue={user.re_password ? 'Sign Up' : "Sign In"} onClick={e => submit(e)}/>
             </div>
+            <Google />
           </form>
           <p className="text--center">Not a member? <Link to={useLocation().pathname === "/register" ? "/" : "/register"}>Sign up now</Link> <svg className="icon">
               <use xlinkHref="#icon-arrow-right" />
