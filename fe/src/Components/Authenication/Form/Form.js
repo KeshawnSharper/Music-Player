@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import "../Form/Form.css"
 import { useLocation,Link } from 'react-router-dom'
-const Form = ({user,error,changeUser,submit}) => {
+const Form = ({appError,user,error,changeUser,submit}) => {
     return (
         <div>
         <div className="grid">
-          <p className="error_message"> {error} </p>
+          <p className="error_message"> {appError ? "Invalid Credentials" : error} </p>
           <form autoComplete="off" className="form login">
               {
                   useLocation().pathname === "/register"  ?
