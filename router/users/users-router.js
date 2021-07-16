@@ -9,7 +9,7 @@ if (type == "Default"){
   if (!user.username || !user.password || !user.email) {
     return res.status(400).json("Please add username, email and password fields");
   }
-  if (typeof user.username !== "string" || typeof user.password !== "string" || typeof user.email !== "string" ) {
+  if (typeof user.username !== "string" || typeof user.password !== "string" || typeof user.email !== "string") {
     return res.status(400).json("Username, email or password cant be integers");
   }
 }
