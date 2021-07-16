@@ -23,7 +23,7 @@ export function login(user) {
   export function Social_Login(user) {
     return (dispatch) => {
       //   Load Login
-      dispatch({ type: "SOCIAL_LOGIN_LOADING" });
+      dispatch({ type: "SOCIAL_LOGIN_LOADING" })
       // send login credentials from Login page to the backend
     axios
     .post(`http://localhost:5000/users/Social_Login`, user)
