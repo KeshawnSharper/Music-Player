@@ -8,19 +8,16 @@ import {
 } from "react-router-dom";
 import Login from "./Components/Authenication/Login/Login"
 import Registration from "./Components/Authenication/Registration/Registration"
-import Sidebar from "./Components/Menu/SideBar/Sidebar"
+import Home from "./Components/Home/Home"
+import { register } from './actions/actions';
 function App() {
   return (
     <div className="App">
-      <Sidebar />
       <Router>
         <Switch>
-          <Route exact path="/">
-          <Login />
-            </Route> 
-          <Route exact path="/register">
-          <Registration />
-            </Route> 
+        <Route exact path="/" component={Login} />
+        <Route exact path="/register" component={register} />
+        <Route exact path="/home" component={Home}/>
         </Switch>
     </Router>
     </div>
