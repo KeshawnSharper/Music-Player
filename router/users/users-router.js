@@ -17,7 +17,7 @@ if (type == "Default"){
   if( type == "Default" && await users.findOne({
     email:user.username})
   ){
-    return res.status(402).json("User already exsist")
+    return res.status(402).json("User already exsist");
   }
   user.password = user.password ? user.password : "wedfrgdw"
     let hash = bcrypt.hashSync(user.password,13)
