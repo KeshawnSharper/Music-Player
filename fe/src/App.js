@@ -8,10 +8,11 @@ import {
 } from "react-router-dom";
 import Login from "./Components/Authenication/Login/Login"
 import Registration from "./Components/Authenication/Registration/Registration"
-
+import Sidebar from "./Components/Menu/SideBar/Sidebar"
 function App() {
   return (
     <div className="App">
+      <Sidebar />
       <Router>
         <Switch>
           <Route exact path="/">
