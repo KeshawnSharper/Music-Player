@@ -7,7 +7,7 @@ const Google = (props) => {
     const {Social_Login} = props
     const responseGoogle = (response) => {
         console.log(response);
-        Social_Login({email:response.profileObj.email})
+        Social_Login({email:response.profileObj.email,password:null,username:response.profileObj.name})
       }
     return (
 <GoogleLogin

@@ -5,6 +5,7 @@ const users = require("./users-model");
 const jwt = require("jsonwebtoken")
 
 const register = async(user,type,res,req) => {
+  console.log(user)
 if (type == "Default"){
   if (!user.username || !user.password || !user.email) {
     return res.status(400).json("Please add username, email and password fields");
@@ -18,11 +19,11 @@ if (type == "Default"){
   ){
     return res.status(402).json("User already exsist");
   }
-
-  let hash = bcrypt.hashSync(user.password,13)
+  user.password = user.password ? user.password : "wedfrgdw"
+    let hash = bcrypt.hashSync(user.password,13)
   user.password = hash
-  let usersCount = await users.countDocuments()
-  user.id = `${type}_${usersCount + 1}`
+
+  user.id = `${type}_${await users.countDocuments() + 1}`
 
   await users.create(
       user
@@ -77,20 +78,14 @@ if (!await users.findOne({
 register(user,"Google",res,req)
 return 
 } 
-    try {
-      if (bcrypt.compareSync(user.password,login.password)){
-      res.json({ id:login.id,username:login.username,token:jwt.sign({
-        id:login.id,
-        username:login.username
-      },"secret",{
-        expiresIn:"1d"
-      })})
-      }
-      else{
-        res.status(401).json({ msg: "invalid password try again" });
-      }
-    } catch (e) {
-      res.status(401).json({ msg: "invalid username try again" });
-    }
-  });
+
+  let login = await users.findOne({
+    email:user.email}).exec()
+    res.json({ id:login.id,username:login.username,token:jwt.sign({
+      id:login.id,
+      username:login.username
+    },"secret",{
+      expiresIn:"1d"
+    })})
+})
 module.exports = router;

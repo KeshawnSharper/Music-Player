@@ -106,3 +106,12 @@ dist
 # Env 
 
 .env
+
+
+# Node Modules
+
+node_modules
+
+# Music Player Folder 
+
+Music-Player
