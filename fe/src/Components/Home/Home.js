@@ -1,5 +1,7 @@
 import React,{useState} from "react"
 import Search from "./Search/Search"
+import Player from "./Player/Player"
+import SideBar from "../../Components/Menu/SideBar/Sidebar"
 const Home = props => {
     const [value,setValue] = useState({name:"",type:"song"})
     const handleChange = (e) => {
@@ -7,7 +9,9 @@ const Home = props => {
     }
     return (
         <>
+        <SideBar />
         <Search handleChange={handleChange} value={value}/>
+        <Player />
         </>
     )
 } 

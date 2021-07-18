@@ -74,7 +74,7 @@ background-color: #BFBFBF;
 font-size: 1em;
   
 }
-.fa {
+.main-menu .fa {
 position: relative;
 display: table-cell;
 width: 55px;

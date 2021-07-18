@@ -8,7 +8,7 @@ return (
 <div class="searchBox">
 
 
-<input class="searchInput"type="text" placeholder="Search" value={value.name} name="name" onChange={e => handleChange(e)} />
+<input class="searchInput"type="text" placeholder="Search" value={value.name} name="name" onChange={e => handleChange(e)} autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
 <button class="searchButton" href="#">
 <i class="fa fa-search" aria-hidden="true"></i>
 </button>

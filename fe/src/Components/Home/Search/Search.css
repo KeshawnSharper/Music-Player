@@ -1,6 +1,5 @@
 .searchBox {
     position: absolute;
-    top: 40%;
     left: 50%;
     transform:  translate(-50%,50%);
     height: 40px;
@@ -8,9 +7,7 @@
     padding-right: 25px;
 	padding-left: 25px;
 	padding-bottom: 100px;
-	padding-top: 100px;
-
-
+	cursor: pointer;
 }
 
 .searchBox:hover > .searchInput {
@@ -24,6 +21,7 @@
 }
 
 .searchButton {
+	cursor: pointer;
     color: white;
     float: right;
     width: 40px;
@@ -48,6 +46,9 @@
     /* line-height: 40px; */
     width: 0px;
 
+}
+option{
+	color: black;
 }
 
 @media screen and (max-width: 620px) {
