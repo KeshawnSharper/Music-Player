@@ -9,7 +9,11 @@ return (
             <ion-icon name="search"></ion-icon>
         </div>
         <div class="btn-settings">
-            <ion-icon name="settings-outline"></ion-icon>
+            <select value="song">
+                <option value="song">Song</option>
+                <option value="artist">Artist</option>
+                <option value="album">Album</option>
+            </select>
         </div>
     </header>
 )
