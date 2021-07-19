@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-import "../Form/Form.css"
+import "./Form.css"
 import { useLocation,Link } from 'react-router-dom'
 import Google from "../Google/Google"
 
 const Form = ({appError,user,error,changeUser,submit}) => {
     return (
-        <div>
+        <div className="body">
         <div className="grid">
           <p className="error_message"> {appError ? "Invalid Credentials" : error
                   } </p>

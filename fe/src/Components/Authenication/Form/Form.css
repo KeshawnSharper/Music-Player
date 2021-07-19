@@ -70,10 +70,10 @@
     font-size: var(--htmlFontSize);
   }
   
-  body {
+  .body {
     background-color: #292929;
     background-color: #292929;
-    color: #606468;
+    /* color: #606468;
     color: var(--bodyColor);
     font-family: "Open Sans", sans-serif;
     font-family: var(--bodyFontFamily), var(--bodyFontFamilyFallback);
@@ -82,8 +82,8 @@
     font-weight: 400;
     font-weight: var(--bodyFontWeight);
     line-height: 1.5;
-    line-height: var(--bodyLineHeight);
-    margin: 0;
+    line-height: var(--bodyLineHeight); */
+    padding-top: 50px;
     min-height: 100vh;
   }
   
