@@ -1,7 +1,7 @@
 import React from "react"
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import Song from "./Song";
+import Song from "./Song"
 const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
