@@ -28,7 +28,7 @@ const Songs = (props) => {
                 </div>
             </header>
             </div>
-        <Grid container spacing={1 } style={{marginTop:"50px"}}>
+        <Grid container spacing={1} style={{marginTop:"50px"}}>
 <Song/>
             </Grid>
             </div>
