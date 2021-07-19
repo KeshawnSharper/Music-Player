@@ -5,11 +5,11 @@ const Search = props => {
 return (
 <header >
         <div class="search">
-            <input type="text" placeholder="Search by song, artist, album, video, podcast ..."/>
+            <input type="text" value={value.name} placeholder="Search by song, artist, album, video, podcast ..." onChange={handleChange} name="name"/>
             <ion-icon name="search"></ion-icon>
         </div>
         <div class="btn-settings">
-            <select value="song">
+            <select value={value.type} onChange={handleChange} name="type">
                 <option value="song">Song</option>
                 <option value="artist">Artist</option>
                 <option value="album">Album</option>

@@ -9,7 +9,6 @@ import {
 import Login from "./Components/Authenication/Login/Login"
 import Registration from "./Components/Authenication/Registration/Registration"
 import Home from "./Components/Home/Home"
-import { register } from './actions/actions';
 function App() {
   return (
     <div className="App">

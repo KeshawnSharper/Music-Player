@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Form from "../Form/Form"
-import { register } from "../../../actions/actions";
+import { register } from "../../../actions/Authenication_actions";
 import { connect } from "react-redux";
 const Registration = ({user,loading,register}) => {
     const [registerUser,setRegisterUser] = useState({
