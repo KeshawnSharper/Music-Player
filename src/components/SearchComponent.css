@@ -1,0 +1,7 @@
+body{
+    background-color: white;
+}
+input{
+    color: black;
+    z-index: 5;
+}
