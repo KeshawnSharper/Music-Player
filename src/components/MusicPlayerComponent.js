@@ -82,7 +82,7 @@ const TinyText = styled(Typography)({
   letterSpacing: 0.2,
 });
 
-function MusicPlayerComponent() {
+function MusicPlayerComponent({song}) {
   const theme = useTheme();
   const duration = 200; // seconds
   const [position, setPosition] = React.useState(500);
@@ -97,23 +97,22 @@ function MusicPlayerComponent() {
     theme.palette.mode === 'dark' ? 'rgba(255,255,255,0.4)' : 'rgba(0,0,0,0.4)';
   
   
-  
-  const [songs,setMusic] = useState([])
-  useEffect(() => {
-    getMusic()
-    console.log("hello world")
-  },[songs])
+
     return (
   
     <div
     style={{
-      "margin":"100px"
+      width:"100%"
     }}>
-    <audio
-  src="http://ice1.somafm.com/u80s-256-mp3"
-  autoPlay
-  controls
-/>
+      {song ? 
+         <audio
+         src={song}
+         autoPlay
+         controls
+         
+       />
+      : <></>}
+ 
 </div>
   );
 }

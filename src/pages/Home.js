@@ -1,14 +1,13 @@
 import React, { useState } from "react"
+import FooterMusicPlayerComponent from "../components/FooterMusicPlayerComponent"
 import MusicPlayerComponent from "../components/MusicPlayerComponent"
 import ToolbarComponent from "../components/ToolBarComponent"
-import FooterMusicPlayerView from "../views/FooterMusicPlayerView"
 const Home = () => {
     return(
         <>
         <ToolbarComponent />
         <MusicPlayerComponent />
-        <FooterMusicPlayerView />
-        
+        <FooterMusicPlayerComponent />
         </>
 
 

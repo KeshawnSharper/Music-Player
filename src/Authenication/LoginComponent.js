@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+ import React, { useState } from "react"
 import AuthenicationPage from "./AuthenicationPage"
 
 const LoginComponet = ({submit,error,page}) => {

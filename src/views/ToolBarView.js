@@ -78,7 +78,7 @@ const DrawerHeader = styled('div')(({ theme }) => ({
   color:red
 }));
 
-export default function ToolBarView() {
+export default function ToolBarView({songs}) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
@@ -131,7 +131,7 @@ export default function ToolBarView() {
             {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </DrawerHeader>
-       <SongListComponent />
+       <SongListComponent songs={songs} title={"My Songs"}/>
 
       </Drawer>
     </Box>

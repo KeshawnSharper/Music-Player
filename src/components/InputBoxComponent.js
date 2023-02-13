@@ -4,7 +4,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 
 
-const InputBoxComponent = () => {
+const InputBoxComponent = ({handleChange,name,value}) => {
     return (
         <Box
         component="form"
@@ -15,28 +15,14 @@ const InputBoxComponent = () => {
         noValidate
         autoComplete="off"
       >
-        <h2>Search Music </h2>
               <TextField
-        label="Standard warning"
+        label={name}
+        onChange={handleChange}
+        name={name}
+        value={value}
       
       />
-           <TextField
-        label="Standard warning"
-      
-      />
-           <TextField
-        label="Standard warning"
-      
-      />
-           <TextField
-        label="Standard warning"
-      
-      />
-            <Button 
-            variant="outlined"
-            >
-                Search
-                </Button>
+
 
         </Box> 
     )

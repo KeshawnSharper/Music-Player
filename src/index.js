@@ -13,9 +13,7 @@ const rootElement = ReactDOM.createRoot(document.getElementById("root"));
 const store = createStore(StoreReducer,applyMiddleware(thunk,logger))
 rootElement.render(
   <Provider store={store}>
-  <React.StrictMode>
     <App />
-  </React.StrictMode>
   </Provider>
 
 );

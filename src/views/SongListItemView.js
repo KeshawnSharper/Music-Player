@@ -7,28 +7,22 @@ import Box from '@mui/material/Box';
 
 
 
-const SongListItemView = ({artist,songName,albumName}) => {
+const SongListItemView = ({song,handleCurrentSong,addSong}) => {
     return (
-        <>
+        <div onClick={handleCurrentSong}>
         <div class="grid-container">
         <div class="item2">
-        <img src="https://res.cloudinary.com/di449masi/image/upload/v1667937480/Chris_Brown_-_Wall_To_Wall_single_cover_makayu.jpg" />
+        <img src={song.files.cover} />
         </div>
   <div class="item3">
-    <p>Chris Brown</p>
-    <p>Wall to Wall</p>
-    <p>Wall to Wall</p>
+    <p>{song.artist}</p>
+    <p>{song.songName}</p>
     </div>  
   <div class="item4">
-  <PauseIcon />
-  </div>
-  <div class="item5">
-  <Box sx={{ width: '95%' }}>
-      <LinearProgress variant="determinate" value={70} />
-    </Box>
+  <p style={{"fontSize":"30px","color":"red"}} onClick={() => addSong()}>&hearts;</p>
   </div>
 </div>
-        </>
+        </div>
 
     )
 }
